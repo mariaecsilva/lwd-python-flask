@@ -40,3 +40,14 @@
 .navbar .nav-link:hover {
     color: #FFA500 !important; 
 }
+
+.table-custom {
+  background-color: #f8f9fa;
+}
+.table-custom th, .table-custom td {
+  background-color: #ff7f50; 
+  color: white;
+}
+.table-custom th {
+  background-color: #1e90ff; 
+}

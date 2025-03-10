@@ -31,10 +31,24 @@
     </button>
   </form>
   <hr />
-  <ol>
-    {% for r in records: %}
-    <li>Produto: {{r.title}} Preço: {{r.price}} Horário: {{r.time}}</li>
-    {% endfor %}
-  </ol>
+  <table class="table table-bordered table-custom">
+    <thead>
+      <tr>
+        <th scope="col">Produto</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Horário</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in records %}
+      <tr>
+        <td>{{ r.title }}</td>
+        <td>{{ r.price }}</td>
+        <td>{{ r.time }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
   {% endblock content %}
 </div>

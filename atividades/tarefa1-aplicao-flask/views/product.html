@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="container py-4" style="background-color: #f0f0f0; border-radius: 8px;">
-        <a href="{{ url_for('catalog') }}" class="btn btn-dark mb-4">Todos os produtos</a>
+        <a href="{{ url_for('catalog') }}" class="btn btn-custom">Voltar</a>
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <div class="card shadow-sm">
-                    <img src="{{ product['image'] }}" alt="{{ product['title'] }}" class="card-img-top" style="height: 300px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                <div class="card shadow-sm  align-items-center">
+                    <img src="{{ product['image'] }}" alt="{{ product['title'] }}" class="card-img-top" style="height: 300px; width: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
                     <div class="card-body">
                         <h3 class="card-title">{{ product['title'] }}</h3>
                         <p class="card-text"><strong>Descrição:</strong> {{ product['description'] }}</p>
