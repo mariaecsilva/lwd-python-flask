@@ -1,0 +1,42 @@
+.container-custom {
+    background: linear-gradient(to bottom, #0056b3, #a1c4fd);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.welcome-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.btn-custom {
+  background-color: #ffa500;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #ff8800;
+  color:white;
+}
+
+.navbar {
+    background-color: #0056b3; 
+}
+
+.navbar .nav-link {
+    color: white !important; 
+    transition: 0.3s ease-in-out; 
+}
+
+.navbar .nav-link:hover {
+    color: #FFA500 !important; 
+}

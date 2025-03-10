@@ -6,13 +6,12 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="card shadow-sm">
-                    <img src="{{ productInfo['image'] }}" alt="{{ productInfo['title'] }}" class="card-img-top" style="height: 300px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <img src="{{ product['image'] }}" alt="{{ product['title'] }}" class="card-img-top" style="height: 300px; object-fit: cover; border-radius: 8px 8px 0 0;">
                     <div class="card-body">
-                        <h3 class="card-title">{{ productInfo['title'] }}</h3>
-                        <p class="card-text"><strong>Descrição:</strong> {{ productInfo['description'] }}</p>
-                        <p class="card-text"><strong>Preço:</strong> R$ {{ productInfo['price'] }}</p>
-                        <p class="card-text"><strong>Categoria:</strong> {{ productInfo['category'] }}</p>
-                        <a href="{{ productInfo['url'] }}" class="btn btn-danger w-100">Comprar agora!</a>
+                        <h3 class="card-title">{{ product['title'] }}</h3>
+                        <p class="card-text"><strong>Descrição:</strong> {{ product['description'] }}</p>
+                        <p class="card-text"><strong>Preço:</strong> R$ {{ product['price'] }}</p>
+                        <p class="card-text"><strong>Categoria:</strong> {{ product['category'] }}</p>
                     </div>
                 </div>
             </div>

@@ -1,22 +1,40 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<form action="{{ url_for('register') }}" method="POST">
-    <label for="title">Nome do Produto:</label>
-    <input type="text" id="title" name="title" required><br>
-
-    <label for="value">Preço (R$):</label>
-    <input type="text" id="value" name="value" required><br>
-
-    <label for="category">Categoria:</label>
-    <input type="text" id="category" name="category" required><br>
-
-    <label for="description">Descrição:</label>
-    <textarea id="description" name="description" required></textarea><br>
-
-    <label for="image">Imagem (URL):</label>
-    <input type="url" id="image" name="image" required><br>
-
-    <input type="submit" value="Cadastrar">
-</form>
-{% endblock content %}
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h2>Registrar Venda</h2>
+  <form action="{{ url_for('register') }}" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Nome do Produto:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Preço (R$):</label>
+      <input
+        type="text"
+        class="form-control"
+        id="price"
+        name="price"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="time" class="form-label">Horário:</label>
+      <input type="text" class="form-control" id="time" name="time" required />
+    </div>
+    <button type="submit" class="btn btn-custom" style="background-color: #ffa500">
+      Registrar
+    </button>
+  </form>
+  <hr />
+  <ol>
+    {% for r in records: %}
+    <li>Produto: {{r.title}} Preço: {{r.price}} Horário: {{r.time}}</li>
+    {% endfor %}
+  </ol>
+  {% endblock content %}
+</div>
