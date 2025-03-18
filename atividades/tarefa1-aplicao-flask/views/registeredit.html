@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h2>Editar Registro</h2>
+  <form action="{{ url_for('edit', id=register.id)}}" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Nome do Produto:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        value="{{register.title}}"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Preço (R$):</label>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        value="{{register.price}}"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="time" class="form-label">Horário:</label>
+      <input type="text" class="form-control" id="time" name="time"  value="{{register.time}}" required />
+    </div>
+    <input type="submit" value="Alterar" class="btn btn-warning" onclick="return confirm('Confirma as alterações?')">
+    <a href="{{url_for('register')}}"><input type="button" value="Cancelar" class="btn btn-danger"></a>
+  </form>
+</div>
+{% endblock content %}
+</div>

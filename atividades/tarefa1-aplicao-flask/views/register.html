@@ -31,24 +31,36 @@
     </button>
   </form>
   <hr />
-  <table class="table table-bordered table-custom">
+  <table class="table table-bordered ">
     <thead>
       <tr>
         <th scope="col">Produto</th>
         <th scope="col">Preço</th>
         <th scope="col">Horário</th>
+        <th style="text-align: center;" colspan="2">Ações:</th>
       </tr>
     </thead>
     <tbody>
-      {% for r in records %}
+      {% for r in recordsregister.items %}
       <tr>
         <td>{{ r.title }}</td>
         <td>{{ r.price }}</td>
         <td>{{ r.time }}</td>
+        <td><a style="color: orange; text-decoration: none;" href="{{url_for('edit', id=r.id)}}">Editar</a></td>
+        <td><a style="color: red; text-decoration: none;" href="{{url_for('register', id=r.id)}}" onclick="return confirm('Deseja mesmo excluir a venda {{r.title}}?')">Excluir</a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
+  <p style="text-align: center;">
+    {% if recordsregister.has_prev %}
+    <a href="{{url_for('register', page=recordsregister.prev_num)}}">
+        << Anterior</a>
+            {% endif %}
+            {% if recordsregister.has_next %}
+            <a href="{{url_for('estoque', page=recordsregister.next_num)}}">Próximo >></a>
+            {% endif %}
+</p>
 </div>
   {% endblock content %}
 </div>
