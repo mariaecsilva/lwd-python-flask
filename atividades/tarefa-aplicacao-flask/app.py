@@ -13,6 +13,9 @@ dir = os.path.abspath(os.path.dirname(__file__))
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(dir, 'models/registers.sqlite3')
 
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.config['MAX_CONTENT_LEGTH'] = 16*1024*1024
+
 if __name__ == '__main__':
     db.init_app(app=app)
     with app.test_request_context():

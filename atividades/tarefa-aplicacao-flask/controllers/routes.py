@@ -1,7 +1,9 @@
-from flask import render_template, request, redirect, url_for;
+from flask import render_template, request, redirect, url_for, flash;
 from models.database import db, Register
 import urllib
 import json
+import os
+import uuid
 
 records=[]
 
@@ -68,3 +70,23 @@ def init_app(app):
             db.session.commit()
             return redirect(url_for('register'))
         return render_template('registeredit.html', register=register)
+    
+
+    FILE_TYPES = set(['png', 'jpg', 'jpeg', 'gif'])
+    def arquivos_permitidos(filename):
+        return '.' in filename and filename.rsplit('.', 1)[1].lower() in FILE_TYPES
+
+
+    @app.route('/galeria', methods=['GET', 'POST'])
+    def galeria():
+        if request.method == 'POST':
+            file = request.files['file']
+            if not arquivos_permitidos(file.filename):
+                flash("Utilize os tipos de arquivos referentes a imagem.", 'danger')
+                return redirect(request.url)
+            
+            filename = str(uuid.uuid4())
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            flash("Imagem enviada com sucesso!", 'success')
+        
+        return render_template('galeria.html')
