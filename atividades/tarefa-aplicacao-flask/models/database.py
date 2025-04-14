@@ -11,3 +11,10 @@ class Register(db.Model):
         self.title = title
         self.price = price
         self.time = time
+
+class Imagem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    filename = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __init__(self, filename):
+        self.filename = filename

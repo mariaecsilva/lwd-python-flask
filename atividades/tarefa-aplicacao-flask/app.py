@@ -3,9 +3,8 @@ from controllers import routes
 from models.database import db
 import os
 
-
-
 app = Flask(__name__, template_folder='views') 
+app.secret_key = os.urandom(24)
 
 routes.init_app(app)
     

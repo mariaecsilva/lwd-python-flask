@@ -51,3 +51,48 @@
 .table-custom th {
   background-color: #1e90ff; 
 }
+
+body {
+  background-color: #f0f8ff;
+}
+
+h2 {
+  color: #003366;
+  font-weight: bold;
+}
+
+.card {
+  border: 2px solid #003366;
+  background-color: #e6f2ff;
+}
+
+.btn-custom {
+  background-color: #ffcc00;
+  color: #003366;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #ffd633;
+  color: #002244;
+}
+
+.img-thumbnail {
+  border: 2px solid #ffcc00;
+  transition: transform 0.3s;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  color: #a94442;
+}
